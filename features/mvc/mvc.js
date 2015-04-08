@@ -1,25 +1,21 @@
 (function(root) {
   'use strict';
 
-  var MVCInjection = module && module.exports || root.MVCInjection;
-
-  // Constants
-
-  MVCInjection.registerInterface('constant');
+  var DependencyInjection = module && module.exports || root.DependencyInjection;
 
   // Models
 
-  MVCInjection.registerInterface('model', ['constant', 'factory', 'service']);
-  MVCInjection.registerInterface('factory', ['constant', 'model', 'service']);
-  MVCInjection.registerInterface('service', ['constant', 'model', 'factory']);
+  DependencyInjection.registerInterface('model', ['factory', 'service']);
+  DependencyInjection.registerInterface('factory', ['model', 'service']);
+  DependencyInjection.registerInterface('service', ['model', 'factory']);
 
   // Controllers
 
-  MVCInjection.registerInterface('controller', ['constant', 'model', 'factory', 'service']);
+  DependencyInjection.registerInterface('controller', ['model', 'factory', 'service']);
 
   // Views
 
-  MVCInjection.registerInterface('view', ['constant', 'model', 'factory', 'service', 'converter']);
-  MVCInjection.registerInterface('converter', ['constant', 'model', 'factory', 'service', 'view']);
+  DependencyInjection.registerInterface('view', ['model', 'factory', 'service', 'converter']);
+  DependencyInjection.registerInterface('converter', ['model', 'factory', 'service', 'view']);
 
 })(this);
