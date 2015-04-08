@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Dependency Injection module for MV-Whatever patterns!",
   "homepage": "https://github.com/XavierBoubert/mvc-injection",
-  "main": "dist/mvc-injection.js",
+  "main": "index.js",
   "license": "MIT",
   "keywords": [
     "mvc",
