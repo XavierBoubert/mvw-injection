@@ -1,0 +1,34 @@
+{
+  "name": "mvc-injection",
+  "version": "0.1.0",
+  "description": "Dependency Injection module for MVC pattern",
+  "homepage": "https://github.com/XavierBoubert/mvc-injection",
+  "main": "dist/mvc-injection.js",
+  "license": "MIT",
+  "keywords": [
+    "mvc",
+    "model",
+    "view",
+    "controller",
+    "dependency",
+    "injection"
+  ],
+  "author": "Xavier Boubert <xavier@boubert.fr>",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:XavierBoubert/mvc-injection.git"
+  },
+  "bugs": {
+    "url": "https://github.com/XavierBoubert/mvc-injection/issues"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-uglifyjs": "^0.6.1",
+    "gulp-insert": "^0.4.0"
+  }
+}
