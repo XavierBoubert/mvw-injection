@@ -1,12 +1,12 @@
-# MVC-Injection
+# MVW-Injection
 
-Dependency Injection module for MVC pattern.
+Dependency Injection module for MV-Whatever patterns!
 
 ## Follow the project
 
-* [Licence](https://github.com/XavierBoubert/mvc-injection/blob/master/LICENSE)
-* [Changelog](https://github.com/XavierBoubert/mvc-injection/blob/master/CHANGELOG.md)
-* [Milestones](https://github.com/XavierBoubert/mvc-injection/issues/milestones?state=open)
+* [Licence](https://github.com/XavierBoubert/mvw-injection/blob/master/LICENSE)
+* [Changelog](https://github.com/XavierBoubert/mvw-injection/blob/master/CHANGELOG.md)
+* [Milestones](https://github.com/XavierBoubert/mvw-injection/issues/milestones?state=open)
 
 ## Installation
 
@@ -27,7 +27,7 @@ Todo
 
 ## Contribute
 
-To contribute to the project, read the [Contribution guidelines](https://github.com/XavierBoubert/mvc-injection/blob/master/CONTRIBUTING.md).
+To contribute to the project, read the [Contribution guidelines](https://github.com/XavierBoubert/mvw-injection/blob/master/CONTRIBUTING.md).
 After that, you can create your own Pull Requests (PR) and submit them here.
 
 ## Lead contribution team

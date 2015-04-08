@@ -1,7 +1,7 @@
 {
-  "name": "mvc-injection",
+  "name": "mvw-injection",
   "version": "0.1.0",
-  "description": "Dependency Injection module for MVC pattern",
+  "description": "Dependency Injection module for MV-Whatever patterns!",
   "homepage": "https://github.com/XavierBoubert/mvc-injection",
   "main": "dist/mvc-injection.js",
   "license": "MIT",
@@ -20,10 +20,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:XavierBoubert/mvc-injection.git"
+    "url": "git@github.com:XavierBoubert/mvw-injection.git"
   },
   "bugs": {
-    "url": "https://github.com/XavierBoubert/mvc-injection/issues"
+    "url": "https://github.com/XavierBoubert/mvw-injection/issues"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
