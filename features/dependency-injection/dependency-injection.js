@@ -1,7 +1,7 @@
 (function(root) {
   'use strict';
 
-  var MVCInjection = new (function MVCInjection() {
+  var DependencyInjection = new (function DependencyInjection() {
 
     var _this = this,
         _interfaces = {};
@@ -48,7 +48,7 @@
 
           for (j = 0; j < interfaces.length; j++) {
             if (!_interfaces[interfaces[j]]) {
-              throw new Error('MVCInjection: "' + interfaces[j] + '" interface is not registered.');
+              throw new Error('DependencyInjection: "' + interfaces[j] + '" interface is not registered.');
             }
 
             var factory = _interfaces[interfaces[j]].factories[dependencies[i]];
@@ -73,7 +73,7 @@
           }
 
           if (!found) {
-            throw new Error('MVCInjection: "' + dependencies[i] + '" is not registered or accessible in ' + name + '.');
+            throw new Error('DependencyInjection: "' + dependencies[i] + '" is not registered or accessible in ' + name + '.');
           }
         }
 
@@ -100,7 +100,7 @@
 
     this.registerInterface = function(name, canInjectInterfaces) {
       if (_this[name]) {
-        throw new Error('MVCInjection: "' + name + '" interface is already registered.');
+        throw new Error('DependencyInjection: "' + name + '" interface is already registered.');
       }
 
       _interfaces[name] = {
@@ -110,9 +110,9 @@
 
       _this.injector[name] = new Injector(name);
 
-      _this[name] = function MVCInjectionFactory(factoryName, factoryFunction) {
+      _this[name] = function DependencyInjectionFactory(factoryName, factoryFunction) {
         if (_interfaces[name].factories[factoryName]) {
-          throw new Error('MVCInjection: "' + factoryName + '" is already registered in ' + name + '.');
+          throw new Error('DependencyInjection: "' + factoryName + '" is already registered in ' + name + '.');
         }
 
         _interfaces[name].factories[factoryName] = {
@@ -129,10 +129,10 @@
   })();
 
   if (module && module.exports) {
-    module.exports = MVCInjection;
+    module.exports = DependencyInjection;
   }
   else {
-    root.MVCInjection = MVCInjection;
+    root.DependencyInjection = DependencyInjection;
   }
 
 })(this);
