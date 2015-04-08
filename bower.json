@@ -1,0 +1,25 @@
+{
+  "name": "mvc-injection",
+  "version": "0.1.0",
+  "description": "Dependency Injection module for MVC pattern",
+  "homepage": "https://github.com/XavierBoubert/mvc-injection",
+  "main": "dist/mvc-injection.js",
+  "license": "MIT",
+  "keywords": [
+    "mvc",
+    "model",
+    "view",
+    "controller",
+    "dependency",
+    "injection"
+  ],
+  "authors": [
+    "Xavier Boubert <xavier@boubert.fr>"
+  ],
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
