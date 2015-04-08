@@ -5,31 +5,52 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglifyjs'),
     insert = require('gulp-insert'),
     packagejson = require('./package.json'),
-    header = '/*! MVC-Injection (' + packagejson.version + '). (C) 2015 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */\r\n',
-    files = [
-      'features/dependency-injection/dependency-injection.js',
-      'features/mvc/mvc.js'
-    ];
+    header = '/*! MVW-Injection (' + packagejson.version + '). (C) 2015 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */\r\n',
+    distPath = './dist',
+    diFile = 'features/dependency-injection/dependency-injection.js',
+    patternFiles = {
+      mvc: 'features/mvc/mvc.js',
+      mvvm: 'features/mvvm/mvvm.js'
+    };
+
+function _addHeader(contents) {
+  if (contents.substr(0, 1) != '{') {
+    contents = header + contents;
+  }
+
+  return contents;
+}
 
 gulp.task('default', ['build', 'watch']);
 
 gulp.task('build', function() {
+
   gulp
-    .src(files)
-    .pipe(concat('mvc-injection.js', {newLine: '\r\n'}))
+    .src(diFile)
     .pipe(insert.prepend(header))
-    .pipe(gulp.dest('./dist'))
-    .pipe(uglify('mvc-injection.min.js', {
+    .pipe(gulp.dest(distPath))
+    .pipe(uglify('dependency-injection.min.js', {
       outSourceMap: true
     }))
-    .pipe(insert.transform(function(contents) {
-      if (contents.substr(0, 1) != '{') {
-        contents = header + contents;
-      }
+    .pipe(insert.transform(_addHeader))
+    .pipe(gulp.dest(distPath));
 
-      return contents;
-    }))
-    .pipe(gulp.dest('./dist'));
+  Object.keys(patternFiles).forEach(function(name) {
+    var file = patternFiles[name];
+
+    gulp
+      .src([diFile, file])
+      .pipe(concat(name + '-injection.js', {
+        newLine: '\r\n'
+      }))
+      .pipe(insert.prepend(header))
+      .pipe(gulp.dest(distPath))
+      .pipe(uglify(name + '-injection.min.js', {
+        outSourceMap: true
+      }))
+      .pipe(insert.transform(_addHeader))
+      .pipe(gulp.dest(distPath));
+  });
 });
 
 gulp.task('watch', function() {
