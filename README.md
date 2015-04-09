@@ -132,6 +132,27 @@ MVCInjection.injector.factory.invoke(function(ActiveUser) {
 });
 ```
 
+When you invoke a function, you can pass custom dependencies in the second argument:
+```javascript
+
+MVCInjection.injector.factory.invoke(function(MyCustomDept, ActiveUser) {
+  // ...
+}, {
+
+  // Dependencies needs to be stacked in a declared interface
+  view: {
+
+    // This dependency will only be defined in the invoked function.
+    // It can use other dependencies relative to its packaged interface.
+    MyCustomDept: function(User) {
+      return function MyCustomDept() {
+        // ...
+      };
+    }
+  }
+});
+```
+
 :exclamation: If you want to minify your JavaScript files, you will run into an issue with injection, because the module extracts the required dependencies by their name (that can be obfuscated with some minification tools). To avoid this, you can use the following syntax:
 ```javascript
 
