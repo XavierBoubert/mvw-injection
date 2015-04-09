@@ -32,7 +32,7 @@
         return factoryFunction;
       }
 
-      return false;
+      return factoryFunction;
     }
 
     function Injector(instanceName) {
