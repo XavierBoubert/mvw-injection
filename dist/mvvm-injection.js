@@ -33,7 +33,7 @@
         return factoryFunction;
       }
 
-      return false;
+      return factoryFunction;
     }
 
     function Injector(instanceName) {
@@ -129,7 +129,7 @@
 
   })();
 
-  if (module && module.exports) {
+  if (typeof module != 'undefined' && typeof module.exports != 'undefined') {
     module.exports = DependencyInjection;
   }
   else {
@@ -141,7 +141,7 @@
 (function(root) {
   'use strict';
 
-  var DependencyInjection = module && module.exports || root.DependencyInjection;
+  var DependencyInjection = typeof module != 'undefined' && typeof module.exports != 'undefined' ? module.exports : root.DependencyInjection;
 
   // Models
 
