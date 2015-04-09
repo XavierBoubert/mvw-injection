@@ -1,7 +1,7 @@
 (function(root) {
   'use strict';
 
-  var DependencyInjection = module && module.exports || root.DependencyInjection;
+  var DependencyInjection = typeof module != 'undefined' && typeof module.exports != 'undefined' ? module.exports : root.DependencyInjection;
 
   // Models
 
