@@ -37,42 +37,47 @@
 
     function Injector(instanceName) {
 
-      function _getInjections(dependencies, name) {
+      function _getInjections(dependencies, name, customDependencies) {
         var interfaces = _interfaces[name].interfacesSupported,
             injections = [],
             i,
             j;
 
         for (i = 0; i < dependencies.length; i++) {
-          var found = false;
+          var factory = null;
 
-          for (j = 0; j < interfaces.length; j++) {
-            if (!_interfaces[interfaces[j]]) {
-              throw new Error('DependencyInjection: "' + interfaces[j] + '" interface is not registered.');
-            }
-
-            var factory = _interfaces[interfaces[j]].factories[dependencies[i]];
-
-            if (factory) {
-              found = true;
-
-              if (!factory.instantiated) {
-                var dependencies = _formatFactoryFunction(factory.result);
-                factory.result = dependencies.pop();
-
-                var factoryInjections = _getInjections(dependencies, interfaces[j]);
-
-                factory.result = factory.result.apply(_this, factoryInjections);
-                factory.instantiated = true;
+          if (customDependencies && typeof customDependencies[dependencies[i]] != 'undefined') {
+            factory = customDependencies[dependencies[i]];
+          }
+          else {
+            for (j = 0; j < interfaces.length; j++) {
+              if (!_interfaces[interfaces[j]]) {
+                throw new Error('DependencyInjection: "' + interfaces[j] + '" interface is not registered.');
               }
 
-              injections.push(factory.result);
+              factory = _interfaces[interfaces[j]].factories[dependencies[i]];
 
-              break;
+              if (factory) {
+                factory.interfaceName = interfaces[j];
+                break;
+              }
             }
           }
 
-          if (!found) {
+          if (factory) {
+            if (!factory.instantiated) {
+              var deps = _formatFactoryFunction(factory.result);
+              factory.result = deps.pop();
+
+              var factoryInjections = _getInjections(deps, factory.interfaceName);
+
+              factory.result = factory.result.apply(_this, factoryInjections);
+              factory.instantiated = true;
+            }
+
+            injections.push(factory.result);
+          }
+          else {
             throw new Error('DependencyInjection: "' + dependencies[i] + '" is not registered or accessible in ' + name + '.');
           }
         }
@@ -86,11 +91,29 @@
         return injections[0];
       };
 
-      this.invoke = function(func) {
+      this.invoke = function(func, customDependencies) {
         var dependencies = _formatFactoryFunction(func);
         func = dependencies.pop();
 
-        var injections = _getInjections(dependencies, instanceName);
+        if (customDependencies) {
+          var formatcustomDependencies = {},
+              interfaceName,
+              factory;
+
+          for (interfaceName in customDependencies) {
+            for (factory in customDependencies[interfaceName]) {
+              formatcustomDependencies[factory] = {
+                interfaceName: interfaceName,
+                instantiated: false,
+                result: customDependencies[interfaceName][factory]
+              };
+            }
+          }
+
+          customDependencies = formatcustomDependencies;
+        }
+
+        var injections = _getInjections(dependencies, instanceName, customDependencies);
 
         return func.apply(_this, injections);
       };
