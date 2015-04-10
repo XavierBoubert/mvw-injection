@@ -7,10 +7,22 @@ Versions details history. For each version you can find:
 * Link to the release branch
 * All of the modifications details
 
+<a name="0.2.1"></a>
+# 0.2.1 (2015-04-10)
+
+[Release 0.2.1](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.1) -
+[Branch release/0.2.1](https://github.com/XavierBoubert/mvw-injection/tree/0.2.1)
+
+### Breeaking changes
+
+- **mvw-injection**
+  - Add "this" first parameter to invoke()
+
 <a name="0.2.0"></a>
 # 0.2.0 (2015-04-09)
 
-[Release 0.2.0](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.0) - [Branch release/0.2.0](https://github.com/XavierBoubert/mvw-injection/tree/0.2.0)
+[Release 0.2.0](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.0) -
+[Branch release/0.2.0](https://github.com/XavierBoubert/mvw-injection/tree/0.2.0)
 
 ### Breeaking changes
 
@@ -20,7 +32,8 @@ Versions details history. For each version you can find:
 <a name="0.1.1"></a>
 # 0.1.1 (2015-04-09)
 
-[Release 0.1.1](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.1.1) - [Branch release/0.1.1](https://github.com/XavierBoubert/mvw-injection/tree/0.1.1)
+[Release 0.1.1](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.1.1) -
+[Branch release/0.1.1](https://github.com/XavierBoubert/mvw-injection/tree/0.1.1)
 
 ### Breeaking changes
 
