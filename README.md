@@ -14,7 +14,7 @@ Dependency Injection module for MV-Whatever patterns!
 
 Use the CDN version:
 ```HTML
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mvw-injection/0.2.0/mvc-injection.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mvw-injection/0.2.1/mvc-injection.min.js"></script>
 ```
 
 Or copy the [dist](https://github.com/XavierBoubert/mvw-injection/tree/master/dist) folder into your project and include ```mvc-injection.js``` or ```mvc-injection.min.js``` (production) file in your HTML page or your node project.
@@ -23,7 +23,7 @@ Or copy the [dist](https://github.com/XavierBoubert/mvw-injection/tree/master/di
 
 Use the CDN version:
 ```HTML
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mvw-injection/0.2.0/mvvm-injection.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mvw-injection/0.2.1/mvvm-injection.min.js"></script>
 ```
 
 Or copy the [dist](https://github.com/XavierBoubert/mvw-injection/tree/master/dist) folder into your project and include ```mvvm-injection.js``` or ```mvvm-injection.min.js``` (production) file in your HTML page or your node project.
@@ -34,7 +34,7 @@ If you want to apply you own patterns, you can use the base module.
 
 Use the CDN version:
 ```HTML
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mvw-injection/0.2.0/dependency-injection.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mvw-injection/0.2.1/dependency-injection.min.js"></script>
 ```
 
 Or copy the [dist](https://github.com/XavierBoubert/mvw-injection/tree/master/dist) folder into your project and include ```dependency-injection.js``` or ```dependency-injection.min.js``` (production) file in your page HTML or your node project.
@@ -124,7 +124,9 @@ Execute a custom function which needs ```ActiveUser```:
 
 // Each pattern method can be used with an "injector":
 // invoke() execute the function with dependencies injection
-MVCInjection.injector.factory.invoke(function(ActiveUser) {
+// The first argument is the current owner passed like
+// Function.prototype.call() or Function.prototype.apply()
+MVCInjection.injector.factory.invoke(this, function(ActiveUser) {
 
   // display "Xavier Boubert";
   console.log(ActiveUser.name);
@@ -135,7 +137,7 @@ MVCInjection.injector.factory.invoke(function(ActiveUser) {
 When you invoke a function, you can pass custom dependencies in the second argument:
 ```javascript
 
-MVCInjection.injector.factory.invoke(function(MyCustomDept, ActiveUser) {
+MVCInjection.injector.factory.invoke(this, function(MyCustomDept, ActiveUser) {
   // ...
 }, {
 
