@@ -1,4 +1,4 @@
-/*! MVW-Injection (0.1.1). (C) 2015 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */
+/*! MVW-Injection (0.2.1). (C) 2015 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */
 (function(root) {
   'use strict';
 
@@ -92,7 +92,7 @@
         return injections[0];
       };
 
-      this.invoke = function(func, customDependencies) {
+      this.invoke = function(thisArg, func, customDependencies) {
         var dependencies = _formatFactoryFunction(func);
         func = dependencies.pop();
 
@@ -116,7 +116,7 @@
 
         var injections = _getInjections(dependencies, instanceName, customDependencies);
 
-        return func.apply(_this, injections);
+        return func.apply(thisArg, injections);
       };
     }
 

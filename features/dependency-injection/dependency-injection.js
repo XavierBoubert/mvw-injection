@@ -91,7 +91,7 @@
         return injections[0];
       };
 
-      this.invoke = function(func, customDependencies) {
+      this.invoke = function(thisArg, func, customDependencies) {
         var dependencies = _formatFactoryFunction(func);
         func = dependencies.pop();
 
@@ -115,7 +115,7 @@
 
         var injections = _getInjections(dependencies, instanceName, customDependencies);
 
-        return func.apply(_this, injections);
+        return func.apply(thisArg, injections);
       };
     }
 
