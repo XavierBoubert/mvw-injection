@@ -228,7 +228,7 @@ See the next chapters to known all patterns details rules.
 
 ### Create custom patterns
 
-If you use the Standalone version, you can add you own patterns. Use ```DependencyInjection.registerInterface()``` to create new interfaces:
+If you use the Standalone version, you can add your own patterns. Use ```DependencyInjection.registerInterface()``` to create new interfaces:
 ```javascript
 
 // Register the "model" as a new package method.
