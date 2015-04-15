@@ -124,7 +124,7 @@
 
     this.registerInterface = function(name, canInjectInterfaces) {
       if (_this[name]) {
-        throw new Error('DependencyInjection: "' + name + '" interface is already registered.');
+        return _this;
       }
 
       _interfaces[name] = {
@@ -136,7 +136,7 @@
 
       _this[name] = function DependencyInjectionFactory(factoryName, factoryFunction) {
         if (_interfaces[name].factories[factoryName]) {
-          throw new Error('DependencyInjection: "' + factoryName + '" is already registered in ' + name + '.');
+          return _this;
         }
 
         _interfaces[name].factories[factoryName] = {
