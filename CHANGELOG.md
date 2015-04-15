@@ -7,6 +7,17 @@ Versions details history. For each version you can find:
 * Link to the release branch
 * All of the modifications details
 
+<a name="0.2.2"></a>
+# 0.2.2 (2015-04-15)
+
+[Release 0.2.2](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.2) -
+[Branch release/0.2.2](https://github.com/XavierBoubert/mvw-injection/tree/0.2.2)
+
+### Breeaking changes
+
+- **mvw-injection**
+  - Remove throw error when register a dependency twice
+
 <a name="0.2.1"></a>
 # 0.2.1 (2015-04-10)
 
