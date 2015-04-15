@@ -1,4 +1,4 @@
-/*! MVW-Injection (0.2.1). (C) 2015 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */
+/*! MVW-Injection (0.2.2). (C) 2015 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */
 (function(root) {
   'use strict';
 
@@ -31,6 +31,15 @@
         }
 
         return factoryFunction;
+      }
+      else {
+        var factoryArrayCopy = [];
+
+        for (var i = 0; i < factoryFunction.length; i++) {
+          factoryArrayCopy.push(factoryFunction[i]);
+        }
+
+        factoryFunction = factoryArrayCopy;
       }
 
       return factoryFunction;

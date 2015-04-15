@@ -31,6 +31,15 @@
 
         return factoryFunction;
       }
+      else {
+        var factoryArrayCopy = [];
+
+        for (var i = 0; i < factoryFunction.length; i++) {
+          factoryArrayCopy.push(factoryFunction[i]);
+        }
+
+        factoryFunction = factoryArrayCopy;
+      }
 
       return factoryFunction;
     }
