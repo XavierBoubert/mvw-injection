@@ -13,7 +13,7 @@ Versions details history. For each version you can find:
 [Release 0.2.3](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.3) -
 [Branch release/0.2.3](https://github.com/XavierBoubert/mvw-injection/tree/0.2.3)
 
-### Breeaking changes
+### Breaking changes
 
 - **dependency-injection**
   - Remove crash when call invoke() method twice
@@ -24,7 +24,7 @@ Versions details history. For each version you can find:
 [Release 0.2.2](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.2) -
 [Branch release/0.2.2](https://github.com/XavierBoubert/mvw-injection/tree/0.2.2)
 
-### Breeaking changes
+### Breaking changes
 
 - **dependency-injection**
   - Remove throw error when register a dependency twice
@@ -35,7 +35,7 @@ Versions details history. For each version you can find:
 [Release 0.2.1](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.1) -
 [Branch release/0.2.1](https://github.com/XavierBoubert/mvw-injection/tree/0.2.1)
 
-### Breeaking changes
+### Breaking changes
 
 - **dependency-injection**
   - Add "this" first parameter to invoke()
@@ -46,7 +46,7 @@ Versions details history. For each version you can find:
 [Release 0.2.0](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.0) -
 [Branch release/0.2.0](https://github.com/XavierBoubert/mvw-injection/tree/0.2.0)
 
-### Breeaking changes
+### Breaking changes
 
 - **dependency-injection**
   - Add custom dependencies to invoke()
@@ -57,7 +57,7 @@ Versions details history. For each version you can find:
 [Release 0.1.1](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.1.1) -
 [Branch release/0.1.1](https://github.com/XavierBoubert/mvw-injection/tree/0.1.1)
 
-### Breeaking changes
+### Breaking changes
 
 - **dependency-injection**
   - Return factory function when already good formating
@@ -74,7 +74,7 @@ Versions details history. For each version you can find:
 
 [Release 0.1.0](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.1.0) - [Branch release/0.1.0](https://github.com/XavierBoubert/mvw-injection/tree/0.1.0)
 
-### Breeaking changes
+### Breaking changes
 
 - **dependency-injection**
   - Creation
