@@ -142,8 +142,8 @@
 
       _this.injector[name] = new Injector(name);
 
-      _this[name] = function DependencyInjectionFactory(factoryName, factoryFunction) {
-        if (_interfaces[name].factories[factoryName]) {
+      _this[name] = function DependencyInjectionFactory(factoryName, factoryFunction, replaceIfExists) {
+        if (!replaceIfExists && _interfaces[name].factories[factoryName]) {
           return _this;
         }
 
