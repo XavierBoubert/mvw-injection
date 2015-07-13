@@ -1,6 +1,6 @@
 {
   "name": "mvw-injection",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Dependency Injection module for MV-Whatever patterns!",
   "homepage": "https://github.com/XavierBoubert/mvc-injection",
   "main": "index.js",
