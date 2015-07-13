@@ -1,4 +1,4 @@
-/*! MVW-Injection (0.2.2). (C) 2015 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */
+/*! MVW-Injection (0.2.4). (C) 2015 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */
 (function(root) {
   'use strict';
 
@@ -143,8 +143,8 @@
 
       _this.injector[name] = new Injector(name);
 
-      _this[name] = function DependencyInjectionFactory(factoryName, factoryFunction) {
-        if (_interfaces[name].factories[factoryName]) {
+      _this[name] = function DependencyInjectionFactory(factoryName, factoryFunction, replaceIfExists) {
+        if (!replaceIfExists && _interfaces[name].factories[factoryName]) {
           return _this;
         }
 
