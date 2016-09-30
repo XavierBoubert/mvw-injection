@@ -7,11 +7,20 @@ Versions details history. For each version you can find:
 * Link to the release branch
 * All of the modifications details
 
-<a name="0.2.4"></a>
-# 0.2.4 (2015-07-13)
+<a name="0.2.5"></a>
+# 0.2.5 (2015-09-16)
 
-[Release 0.2.4](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.4) -
-[Branch release/0.2.4](https://github.com/XavierBoubert/mvw-injection/tree/0.2.4)
+[Release 0.2.5](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.5)
+
+### Breaking changes
+
+- **dependency-injection**
+  - Add the "noError" option to get an inaccessible DI instead of having an error throwed.
+
+<a name="0.2.4"></a>
+# 0.2.4 (2015-07-15)
+
+[Release 0.2.4](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.4)
 
 ### Breaking changes
 
@@ -21,8 +30,7 @@ Versions details history. For each version you can find:
 <a name="0.2.3"></a>
 # 0.2.3 (2015-04-15)
 
-[Release 0.2.3](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.3) -
-[Branch release/0.2.3](https://github.com/XavierBoubert/mvw-injection/tree/0.2.3)
+[Release 0.2.3](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.3)
 
 ### Breaking changes
 
@@ -32,8 +40,7 @@ Versions details history. For each version you can find:
 <a name="0.2.2"></a>
 # 0.2.2 (2015-04-15)
 
-[Release 0.2.2](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.2) -
-[Branch release/0.2.2](https://github.com/XavierBoubert/mvw-injection/tree/0.2.2)
+[Release 0.2.2](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.2)
 
 ### Breaking changes
 
@@ -43,8 +50,7 @@ Versions details history. For each version you can find:
 <a name="0.2.1"></a>
 # 0.2.1 (2015-04-10)
 
-[Release 0.2.1](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.1) -
-[Branch release/0.2.1](https://github.com/XavierBoubert/mvw-injection/tree/0.2.1)
+[Release 0.2.1](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.1)
 
 ### Breaking changes
 
@@ -54,8 +60,7 @@ Versions details history. For each version you can find:
 <a name="0.2.0"></a>
 # 0.2.0 (2015-04-09)
 
-[Release 0.2.0](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.0) -
-[Branch release/0.2.0](https://github.com/XavierBoubert/mvw-injection/tree/0.2.0)
+[Release 0.2.0](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.2.0)
 
 ### Breaking changes
 
@@ -65,8 +70,7 @@ Versions details history. For each version you can find:
 <a name="0.1.1"></a>
 # 0.1.1 (2015-04-09)
 
-[Release 0.1.1](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.1.1) -
-[Branch release/0.1.1](https://github.com/XavierBoubert/mvw-injection/tree/0.1.1)
+[Release 0.1.1](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.1.1)
 
 ### Breaking changes
 
@@ -83,7 +87,7 @@ Versions details history. For each version you can find:
 <a name="0.1.0"></a>
 # 0.1.0 (2015-04-08)
 
-[Release 0.1.0](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.1.0) - [Branch release/0.1.0](https://github.com/XavierBoubert/mvw-injection/tree/0.1.0)
+[Release 0.1.0](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.1.0)
 
 ### Breaking changes
 
