@@ -1,4 +1,4 @@
-/*! MVW-Injection (0.2.4). (C) 2015 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */
+/*! MVW-Injection (0.2.5). (C) 2015 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */
 (function(root) {
   'use strict';
 
@@ -47,7 +47,7 @@
 
     function Injector(instanceName) {
 
-      function _getInjections(dependencies, name, customDependencies) {
+      function _getInjections(dependencies, name, customDependencies, noError) {
         var interfaces = _interfaces[name].interfacesSupported,
             injections = [],
             i,
@@ -62,6 +62,10 @@
           else {
             for (j = 0; j < interfaces.length; j++) {
               if (!_interfaces[interfaces[j]]) {
+                if (noError) {
+                  return false;
+                }
+
                 throw new Error('DependencyInjection: "' + interfaces[j] + '" interface is not registered.');
               }
 
@@ -88,6 +92,10 @@
             injections.push(factory.result);
           }
           else {
+            if (noError) {
+              return false;
+            }
+
             throw new Error('DependencyInjection: "' + dependencies[i] + '" is not registered or accessible in ' + name + '.');
           }
         }
@@ -95,10 +103,14 @@
         return injections;
       }
 
-      this.get = function(factoryName) {
-        var injections = _getInjections([factoryName], instanceName);
+      this.get = function(factoryName, noError) {
+        var injections = _getInjections([factoryName], instanceName, null, noError);
 
-        return injections[0];
+        if (injections.length) {
+          return injections[0];
+        }
+
+        return false;
       };
 
       this.invoke = function(thisArg, func, customDependencies) {
