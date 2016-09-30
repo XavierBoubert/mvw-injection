@@ -2,10 +2,12 @@
 
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
-    uglify = require('gulp-uglifyjs'),
+    sourcemaps = require('gulp-sourcemaps'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
     insert = require('gulp-insert'),
     packagejson = require('./package.json'),
-    header = '/*! MVW-Injection (' + packagejson.version + '). (C) 2015 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */\r\n',
+    header = '/*! MVW-Injection (' + packagejson.version + '). (C) 2016 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */\r\n',
     distPath = './dist',
     diFile = 'features/dependency-injection/dependency-injection.js',
     patternFiles = {
@@ -29,9 +31,18 @@ gulp.task('build', function() {
     .src(diFile)
     .pipe(insert.prepend(header))
     .pipe(gulp.dest(distPath))
-    .pipe(uglify('dependency-injection.min.js', {
-      outSourceMap: true
+    .pipe(sourcemaps.init())
+    .pipe(uglify().on('error', function(err) {
+      console.log('MVW-Injection:error', {
+        error: err
+      });
+
+      this.emit('end');
     }))
+    .pipe(rename({
+      extname: '.min.js'
+    }))
+    .pipe(sourcemaps.write('./'))
     .pipe(insert.transform(_addHeader))
     .pipe(gulp.dest(distPath));
 
@@ -45,9 +56,18 @@ gulp.task('build', function() {
       }))
       .pipe(insert.prepend(header))
       .pipe(gulp.dest(distPath))
-      .pipe(uglify(name + '-injection.min.js', {
-        outSourceMap: true
+      .pipe(sourcemaps.init())
+      .pipe(uglify().on('error', function(err) {
+        console.log('MVW-Injection:error', {
+          error: err
+        });
+
+        this.emit('end');
       }))
+      .pipe(rename({
+        extname: '.min.js'
+      }))
+      .pipe(sourcemaps.write('./'))
       .pipe(insert.transform(_addHeader))
       .pipe(gulp.dest(distPath));
   });
