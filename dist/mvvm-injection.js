@@ -1,4 +1,4 @@
-/*! MVW-Injection (0.2.5). (C) 2015 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */
+/*! MVW-Injection (0.3.0). (C) 2017 Xavier Boubert. MIT @license: en.wikipedia.org/wiki/MIT_License */
 (function(root) {
   'use strict';
 
@@ -12,11 +12,17 @@
 
         var funcString = factoryFunction
           .toString()
+          .trim()
 
           // remove comments
           .replace(/((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg, '');
 
         var matches = funcString.match(/^function\s*[^\(]*\s*\(\s*([^\)]*)\)/m);
+
+        if (matches === null || matches.length < 2) {
+          matches = funcString.match(/^[^\(]*\s*\(\s*([^\)]*)\)\s*=>/m);
+        }
+
         if (matches === null || matches.length < 2) {
           factoryFunction = [factoryFunction];
         }
