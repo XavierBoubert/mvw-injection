@@ -7,6 +7,16 @@ Versions details history. For each version you can find:
 * Link to the release branch
 * All of the modifications details
 
+<a name="0.3.0"></a>
+# 0.3.0 (2017-06-21)
+
+[Release 0.3.0](https://github.com/XavierBoubert/mvw-injection/releases/tag/0.3.0)
+
+### Breaking changes
+
+- **dependency-injection**
+  - Add the support for arrow functions
+
 <a name="0.2.5"></a>
 # 0.2.5 (2015-09-16)
 
